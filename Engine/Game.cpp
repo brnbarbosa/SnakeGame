@@ -46,19 +46,36 @@ void Game::UpdateModel()
 	{
 		if (wnd.kbd.KeyIsPressed(VK_UP))
 		{
-			deltaLoc = { 0,-1 };
+			if (direction != "down")
+			{
+				deltaLoc = { 0,-1 };
+				direction = "up";
+			}
+			
 		}
 		if (wnd.kbd.KeyIsPressed(VK_DOWN))
 		{
-			deltaLoc = { 0,1 };
+			if (direction != "up")
+			{
+				deltaLoc = { 0,1 };
+				direction = "down";
+			}
 		}
 		if (wnd.kbd.KeyIsPressed(VK_RIGHT))
 		{
-			deltaLoc = { 1,0 };
+			if (direction != "left")
+			{
+				deltaLoc = { 1,0 };
+				direction = "right";
+			}
 		}
 		if (wnd.kbd.KeyIsPressed(VK_LEFT))
 		{
-			deltaLoc = { -1,0 };
+			if (direction != "right")
+			{
+				deltaLoc = { -1,0 };
+				direction = "left";
+			}
 		}
 
 		++snakeMovementCounter;

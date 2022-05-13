@@ -28,6 +28,7 @@
 #include "SpriteCodex.h"
 #include "Goal.h"
 #include <random>
+#include <iostream>
 
 class Game
 {
@@ -52,6 +53,7 @@ private:
 	Snake snake;
 	Goal goal;
 	Location deltaLoc = { 0,1 };
+	std::string direction = "down";
 	static constexpr int SNAKEMOVEMENTPERIOD = 6;
 	int snakeMovementCounter = 0;
 	bool gameOver = false;
